@@ -1,0 +1,9 @@
+services:
+    zero_twitty:
+        container_name: 'zero_twitty'
+        build: .
+        volumes:
+            -   .:/app:rw
+        restart: unless-stopped
+        environment:
+            - ENV_NAME=production

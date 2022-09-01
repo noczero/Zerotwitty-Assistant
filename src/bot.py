@@ -173,9 +173,13 @@ class ZeroTwittyAssistant():
             weather_str = Weather(city_name=self.city['name']).get_weather()
             care_msg_str = self.get_care_message(max_length=max_length, min_length=min_length)
 
-            text_format = f"Currently in your location is {weather_str}. \n" \
-                          f"{care_msg_str} " \
-                          f"Most local people tweet about {trends_str}.\n"
+            # text_format = f"Currently in your location is {weather_str}. \n" \
+            #               f"{care_msg_str} " \
+            #               f"Most local people tweet about {trends_str}.\n"
+
+            text_format = f"{care_msg_str}\n" \
+                          f"Weather in your location was {weather_str}" \
+                          f", also most people tweet {trends_str}.\n"
 
             logger.debug(f"{text_format}, length {len(text_format)}")
 
@@ -191,6 +195,7 @@ class ZeroTwittyAssistant():
                     icon_name="fab fa-twitter",
                     output_name=f'{Settings.ROOT_DIR}/assets/{filename}.png',
                     gradient='horizontal',
+                    custom_stopwords=['UV', 'Currently', 'location', 'h', 'C', 'km', 'weather', 'also', 'are', 'and'],
                 )
 
                 # send tweet using media
