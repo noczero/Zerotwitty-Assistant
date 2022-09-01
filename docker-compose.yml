@@ -4,6 +4,6 @@ services:
         build: .
         volumes:
             -   .:/app:rw
-        restart: unless-stopped
+        restart: always
         environment:
             - ENV_NAME=production
