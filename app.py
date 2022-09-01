@@ -9,4 +9,6 @@ if __name__ == '__main__':
     bot = ZeroTwittyAssistant()
     # bot.send_message_v2(f"Hello world from bot! APIv2 {str(datetime.now())}")
     # bot.get_my_user_data()
-    bot.explore()
+    # print(bot.get_care_message())
+    bot.morning_greetings()
+    # bot.try_upload_media()

@@ -10,3 +10,6 @@ class Settings:
     BEARER_TOKEN = os.getenv("BEARER_TOKEN")
     ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
     ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
+    CITY_LATITUDE = float(os.getenv("CITY_LATITUDE"))
+    CITY_LONGITUDE = float(os.getenv("CITY_LONGITUDE"))
+    ROOT_DIR = os.path.dirname(os.path.abspath("__FILE__"))
