@@ -22,3 +22,6 @@ class Settings:
     ROOT_DIR = os.path.dirname(os.path.abspath("__FILE__"))
     ENV_NAME = os.getenv("ENV_NAME")
     MORNING_GREETINGS_HOUR = os.getenv("MORNING_GREETINGS_HOUR")
+    SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+    SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+    LOG_FILE_CONFIG = get_logging()
