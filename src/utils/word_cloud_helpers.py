@@ -166,6 +166,7 @@ def generate_word_cloud(text_format: str):
         output_name=output_name,
         gradient=gradient_list[random.randint(0, 1)],
         custom_stopwords=['UV', 'Currently', 'location', 'h', 'C', 'km', 'weather', 'also', 'are', 'and'],
+        background_color="#F0F0F0" # set to off white grey, https://www.color-name.com/dark-white.color
     )
 
     return output_name
