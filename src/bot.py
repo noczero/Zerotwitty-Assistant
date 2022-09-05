@@ -11,6 +11,7 @@ import stylecloud as sc
 from config import Settings
 from services.spotify import Spotify
 from services.weather import Weather
+from src.utils.word_cloud_helpers import generate_word_cloud
 
 logger = logging.getLogger(__name__)
 
@@ -73,9 +74,11 @@ class ZeroTwittyAssistant():
                 else:
                     logger.error('Unable to download images')
                     raise Exception("Unable to download images")
-            else:
+            elif msg:
                 # without meda
                 response = self.api_v2.create_tweet(text=msg)
+            else:
+                raise Exception("invalid parameters, no message include")
 
             logger.debug(f"Response : {response}")
             return response
@@ -206,23 +209,12 @@ class ZeroTwittyAssistant():
             logger.debug(f"{text_format}, length {len(text_format)}")
 
             if len(text_format) <= 280:
-
-                # generated word clouds
-                suffix = datetime.now().strftime("%y%m%d_%H%M%S")
-                filename = f"cloud_word_{suffix}"
-                sc.gen_stylecloud(
-                    text=text_format,
-                    palette='colorbrewer.sequential.Blues_9',
-                    font_path=f'{Settings.ROOT_DIR}/assets/OpenSans-SemiBold.ttf',
-                    icon_name="fab fa-twitter",
-                    output_name=f'{Settings.ROOT_DIR}/assets/{filename}.png',
-                    gradient='horizontal',
-                    custom_stopwords=['UV', 'Currently', 'location', 'h', 'C', 'km', 'weather', 'also', 'are', 'and'],
-                )
+                # generate sc
+                output_name_sc = generate_word_cloud(text_format=text_format)
 
                 # send tweet using media
                 response = self.send_message_v2(msg=text_format,
-                                                media_filename=f'{Settings.ROOT_DIR}/assets/{filename}.png')
+                                                media_filename=output_name_sc)
                 success = True
                 logger.info("Tweet has been sent")
             else:
