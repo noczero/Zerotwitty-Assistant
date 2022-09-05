@@ -2,3 +2,5 @@ tweepy==4.10.1
 python-dotenv==0.20.0
 stylecloud==0.5.2
 schedule==1.1.0
+spotipy==2.20.0
+beautifulsoup4==4.11.1
