@@ -115,22 +115,24 @@ class Spotify:
     def search_device(self, name: str):
         # get devices by name
         if self.devices:
-            return next(device for device in self.devices if device['name'] == name)
+            res = [device for device in self.devices if device['name'] == name]
+            if len(res) > 0:
+                return res[0]
         return None
 
     def search_own_playlist(self, name: str):
         # get my play list by name
         if self.my_playlist:
-            return next(item for item in self.my_playlist['items'] if item['name'] == name)
+            res = [item for item in self.my_playlist['items'] if item['name'] == name]
+            if len(res) > 0:
+                return res[0]
         return None
 
     def get_track_summary(self) -> str:
-        # conditional
-        if not self.track_features:
-            return ''
-
-        result = generate_informational_features(result=self.track_features)  # get
-        return result
+        # get track summary
+        if self.track_features:
+            return generate_informational_features(result=self.track_features)  # get
+        return ''
 
     def start_playing(self, device_name: str = 'Nexus 5', my_playlist_name: str = 'ZeroPlay') -> tuple:
         # find playable device
