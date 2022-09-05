@@ -86,7 +86,7 @@ def generate_informational_features(result: dict):
     else:
         energy_str = 'low'
 
-    result_str = f"It's has {result['tempo']} bpm tempo, {result['key']} pitch class, and {energy_str} energy. " \
+    result_str = f"It has {result['tempo']} bpm tempo, {result['key']} pitch class, and {energy_str} energy. " \
                  f"{valance_str}. {dance_str}".strip()
 
     return result_str
