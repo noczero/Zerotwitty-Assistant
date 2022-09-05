@@ -1,0 +1,102 @@
+
+// Example of currently playing
+{
+    "timestamp": 1662351126437,
+    "context": {
+        "external_urls": {
+            "spotify": "https://open.spotify.com/playlist/65i1wDZXHHv37yjgSrZPwF"
+        },
+        "href": "https://api.spotify.com/v1/playlists/65i1wDZXHHv37yjgSrZPwF",
+        "type": "playlist",
+        "uri": "spotify:playlist:65i1wDZXHHv37yjgSrZPwF"
+    },
+    "progress_ms": 1659,
+    "item": {
+        "album": {
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/2Xr8AhORpD3Ssrdd8BnVHA"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/2Xr8AhORpD3Ssrdd8BnVHA",
+                    "id": "2Xr8AhORpD3Ssrdd8BnVHA",
+                    "name": "Evacuate the City",
+                    "type": "artist",
+                    "uri": "spotify:artist:2Xr8AhORpD3Ssrdd8BnVHA"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/7m5LmKPNz6YpDdVegGYH6v"
+            },
+            "href": "https://api.spotify.com/v1/albums/7m5LmKPNz6YpDdVegGYH6v",
+            "id": "7m5LmKPNz6YpDdVegGYH6v",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b2734dee0bd34ad1cc437a7eaf33",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e024dee0bd34ad1cc437a7eaf33",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d000048514dee0bd34ad1cc437a7eaf33",
+                    "width": 64
+                }
+            ],
+            "name": "The Catastrophe",
+            "release_date": "2015-01-03",
+            "release_date_precision": "day",
+            "total_tracks": 5,
+            "type": "album",
+            "uri": "spotify:album:7m5LmKPNz6YpDdVegGYH6v"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/2Xr8AhORpD3Ssrdd8BnVHA"
+                },
+                "href": "https://api.spotify.com/v1/artists/2Xr8AhORpD3Ssrdd8BnVHA",
+                "id": "2Xr8AhORpD3Ssrdd8BnVHA",
+                "name": "Evacuate the City",
+                "type": "artist",
+                "uri": "spotify:artist:2Xr8AhORpD3Ssrdd8BnVHA"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/6n8gDEl7sDBnK4z08bsijw"
+                },
+                "href": "https://api.spotify.com/v1/artists/6n8gDEl7sDBnK4z08bsijw",
+                "id": "6n8gDEl7sDBnK4z08bsijw",
+                "name": "Ashley Apollodor",
+                "type": "artist",
+                "uri": "spotify:artist:6n8gDEl7sDBnK4z08bsijw"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 303784,
+        "external_ids": {
+            "isrc": "uscgh1540706"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/6DcylNvZ1fRrnUNXTr3zTt"
+        },
+        "href": "https://api.spotify.com/v1/tracks/6DcylNvZ1fRrnUNXTr3zTt",
+        "id": "6DcylNvZ1fRrnUNXTr3zTt",
+        "name": "Virus (feat. Ashley Apollodor)",
+        "popularity": 33,
+        "preview_url": "https://p.scdn.co/mp3-preview/649dbaf6353b75215f0dac9756eb2ff212227ba1?cid=198ccca0e8c14152baae8cd0402dcb7b",
+        "track_number": 4,
+        "type": "track",
+        "uri": "spotify:track:6DcylNvZ1fRrnUNXTr3zTt"
+    },
+    "currently_playing_type": "track",
+    "actions": {
+        "disallows": {
+        }
+    },
+}

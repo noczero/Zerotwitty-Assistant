@@ -12,7 +12,8 @@ logger = logging.getLogger(__name__)
 
 def send_morning_greetings():
     bot = ZeroTwittyAssistant()
-    bot.morning_greetings()
+    response = bot.morning_greetings()
+    bot.play_music_on_spotify(response.data['id'])
     logger.info(schedule.get_jobs())
 
 

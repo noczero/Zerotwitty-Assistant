@@ -1,14 +1,15 @@
 import os
 import random
 from datetime import datetime
-import pathlib
 from operator import itemgetter
+
+import requests
 import tweepy
 import logging
-from os import path
 import stylecloud as sc
 
 from config import Settings
+from services.spotify import Spotify
 from services.weather import Weather
 
 logger = logging.getLogger(__name__)
@@ -45,13 +46,33 @@ class ZeroTwittyAssistant():
         except Exception as e:
             logger.error(f"Failed to send, {e}")
 
-    def send_message_v2(self, msg: str, media_filename: str = None):
+    def send_message_v2(self, msg: str, media_filename: str = None, img_url: str = None, in_reply_to_tweet_id=None):
         logger.info(f"Send Tweet using API v2 : {msg}")
         try:
             if media_filename:
                 # any media
                 media = self.api.media_upload(media_filename)
-                response = self.api_v2.create_tweet(text=msg, media_ids=[media.media_id_string])
+                response = self.api_v2.create_tweet(text=msg, media_ids=[media.media_id_string],
+                                                    in_reply_to_tweet_id=in_reply_to_tweet_id)
+                os.remove(media_filename)  # delete the files
+            elif img_url:
+                # upload from external url
+                request = requests.get(img_url, stream=True)
+                filename = f'{Settings.ROOT_DIR}/assets/temp.jpg'
+                if request.status_code == 200:
+                    with open(filename, 'wb') as image:
+                        for chunk in request:
+                            image.write(chunk)
+
+                    # upload
+                    media = self.api.media_upload(filename)
+                    response = self.api_v2.create_tweet(text=msg, media_ids=[media.media_id_string],
+                                                        in_reply_to_tweet_id=in_reply_to_tweet_id)
+
+                    os.remove(filename)  # delete the files
+                else:
+                    logger.error('Unable to download images')
+                    raise Exception("Unable to download images")
             else:
                 # without meda
                 response = self.api_v2.create_tweet(text=msg)
@@ -168,6 +189,7 @@ class ZeroTwittyAssistant():
         limit = 3
         max_length = 200
         min_length = 100
+        response = None
         while not success:
             trends_str = self.get_top_trend(limit=limit)
             weather_str = Weather(city_name=self.city['name']).get_weather()
@@ -199,7 +221,8 @@ class ZeroTwittyAssistant():
                 )
 
                 # send tweet using media
-                self.send_message_v2(msg=text_format, media_filename=f'{Settings.ROOT_DIR}/assets/{filename}.png')
+                response = self.send_message_v2(msg=text_format,
+                                                media_filename=f'{Settings.ROOT_DIR}/assets/{filename}.png')
                 success = True
                 logger.info("Tweet has been sent")
             else:
@@ -208,10 +231,17 @@ class ZeroTwittyAssistant():
                 max_length -= 25
                 min_length -= 25
 
+        return response
+
     def try_upload_media(self):
         media = self.api.media_upload(f'{Settings.ROOT_DIR}/assets/media_test.png')
         response = self.api_v2.create_tweet(text='test', media_ids=[media.media_id_string])
         logger.debug(response)
+
+    def play_music_on_spotify(self, in_reply_to_tweet_id: str):
+        spotify = Spotify()
+        tweet_msg, img_url = spotify.start_playing()
+        self.send_message_v2(msg=tweet_msg, img_url=img_url, in_reply_to_tweet_id=in_reply_to_tweet_id)
 
 
 if __name__ == '__main__':

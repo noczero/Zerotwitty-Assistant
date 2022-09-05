@@ -13,10 +13,12 @@ logging.config.fileConfig(f'{Settings.ROOT_DIR}/logs/{Settings.LOG_FILE_CONFIG}'
 logger = logging.getLogger(__name__)
 
 if __name__ == '__main__':
-    # bot = ZeroTwittyAssistant()
-    # bot.morning_greetings()
-    # print(bot.get_top_trend())
+    bot = ZeroTwittyAssistant()
+    response = bot.morning_greetings()
+    bot.play_music_on_spotify(response.data['id'])
 
     # test spotify
-    spotify = Spotify()
-    spotify.explore()
+    # spotify = Spotify()
+    # spotify.start_playing()
+
+
