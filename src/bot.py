@@ -164,25 +164,36 @@ class ZeroTwittyAssistant():
         return result_str
 
     def get_care_message(self, max_length=200, min_length=100):
-        # more human remind bot
-        user = self.api_v2.get_user(username="tssremindbot")
+
+        list_users = ["tssremindbot", "selfcare_bot"]
+
+        choose_user = list_users[random.randint(0, 1)]
+
+        user = self.api_v2.get_user(username=choose_user)
         # get tweet, just 10, only public account not private
         response = self.api_v2.get_users_tweets(user.data.id)
         logger.debug(response)
 
-        # using randomize
-        result = ''
-        found = False
-        while not found:
-            random_index = random.randint(0, 9)
-            raw_text = response.data[random_index]['text']
-            split_text = raw_text.split('\n')
-            text = split_text[2]
+        if choose_user == "tssremindbot":
+            # using randomize
+            result = ''
+            found = False
+            while not found:
+                try:
+                    random_index = random.randint(0, 9)
+                    raw_text = response.data[random_index]['text']
+                    split_text = raw_text.split('\n')
+                    text = split_text[2]
 
-            # check length
-            if max_length > len(text) > min_length:
-                result = text
-                found = True
+                    # check length
+                    if max_length > len(text) > min_length:
+                        result = text
+                        found = True
+                except Exception as e:
+                    logger.error(f"Error parsing, {e}")
+        else:
+            random_index = random.randint(0, 9)
+            result = response.data[random_index]['text']
 
         return result
 
