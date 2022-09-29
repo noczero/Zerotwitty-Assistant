@@ -1,4 +1,5 @@
 import json
+import random
 import time
 
 import spotipy
@@ -142,14 +143,32 @@ class Spotify:
         if my_device:
             my_playlist = self.search_own_playlist(name=my_playlist_name)
 
-            self.api_client.shuffle(state=True, device_id=my_device['id'])  # shuffle
+            logger.debug(f"Playlist uri : {my_playlist}")
+
+            tracks_list = self.api_client.playlist_items(my_playlist['id'])
+
+            logger.debug(f"Tracks list: {tracks_list}")
+
+            # self.api_client.shuffle(state=True, device_id=my_device['id'])  # shuffle
+            # logger.info(random.randint(0, tracks_list['total']))
+
+            choosen_track = tracks_list['items'][random.randint(0, tracks_list['total'])]
+
+            logger.debug(f"Choosen track {choosen_track}")
 
             self.api_client.start_playback(device_id=my_device['id'],
-                                           context_uri=my_playlist['uri'])  # play my playlist
+                                           # context_uri=my_playlist['uri']
+                                           uris=[choosen_track['track']['uri']]
+                                           )  # play my playlist
 
             time.sleep(1.5)  # wait 1.5 sec
 
             current_track = self.api_client.currently_playing()  # get playing tracks
+
+            # add playlist key
+            current_track['playlist'] = my_playlist
+
+            logger.debug(f"Current track {current_track}")
 
             # get summary
             self.track_features = self.api_client.audio_features(tracks=current_track['item']['id'])[0]  # brief

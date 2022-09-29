@@ -35,8 +35,14 @@ def parsing_artist_str(artists: [dict]) -> str:
 def parsing_to_twitter_msg(current_track: dict, summary:str) -> tuple:
     artists = current_track['item']['artists']
     artists_str = parsing_artist_str(artists)
+
+    if current_track['context']:
+        playlist_url = current_track['context']['external_urls']['spotify']
+    else:
+        playlist_url = current_track['playlist']['external_urls']['spotify']
+
     format_text = f"🎧 Now playing {current_track['item']['name']} - {artists_str}. {summary} " \
-                  f"Check out my playlist on {current_track['context']['external_urls']['spotify']}"
+                  f"Check out my playlist on {playlist_url}"
 
     img_url = current_track['item']['album']['images'][0]['url']
 
