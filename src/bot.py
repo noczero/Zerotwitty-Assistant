@@ -243,7 +243,7 @@ class ZeroTwittyAssistant():
 
     def play_music_on_spotify(self, in_reply_to_tweet_id: str):
         spotify = Spotify()
-        tweet_msg, img_url = spotify.start_playing()
+        tweet_msg, img_url = spotify.start_playing(device_name=Settings.DEVICE_NAME)
         self.send_message_v2(msg=tweet_msg, img_url=img_url, in_reply_to_tweet_id=in_reply_to_tweet_id)
 
 

@@ -25,4 +25,5 @@ class Settings:
     SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
     SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
     SPOTIPY_CLIENT_USERNAME = os.getenv("SPOTIPY_CLIENT_USERNAME")
+    DEVICE_NAME = os.getenv("DEVICE_NAME")
     LOG_FILE_CONFIG = get_logging()

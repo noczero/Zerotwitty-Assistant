@@ -181,4 +181,4 @@ class Spotify:
 
 if __name__ == '__main__':
     spotify = Spotify()
-    spotify.start_playing()
+    spotify.start_playing(device_name=Settings.DEVICE_NAME)
