@@ -147,7 +147,14 @@ def get_random_icon_name():
         icon_list_name = data[list_key[category_index]]
         icon_index = random.randint(0, len(icon_list_name) - 1)
 
-        return data[list_key[category_index]][icon_index]
+        icon_name = data[list_key[category_index]][icon_index]
+        # use only fas keyword
+        while True:
+            if 'fas' in icon_name:
+                return icon_name
+            else:
+                icon_index = random.randint(0, len(icon_list_name) - 1)
+                icon_name = data[list_key[category_index]][icon_index]
 
 
 def generate_word_cloud(text_format: str):
