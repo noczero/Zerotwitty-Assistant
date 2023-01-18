@@ -206,7 +206,7 @@ class ZeroTwittyAssistant():
         response = None
         while not success:
             trends_str = self.get_top_trend(limit=limit)
-            weather_str = Weather(city_name=self.city['name']).get_weather()
+            weather_str = Weather(latitude=Settings.CITY_LATITUDE, longitude=Settings.CITY_LONGITUDE).get_weather()
             care_msg_str = self.get_care_message(max_length=max_length, min_length=min_length)
 
             # text_format = f"Currently in your location is {weather_str}. \n" \
