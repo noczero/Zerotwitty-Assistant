@@ -178,6 +178,7 @@ class ZeroTwittyAssistant():
             # using randomize
             result = ''
             found = False
+            counter = 0
             while not found:
                 try:
                     random_index = random.randint(0, 9)
@@ -189,11 +190,21 @@ class ZeroTwittyAssistant():
                     if max_length > len(text) > min_length:
                         result = text
                         found = True
+
+                    # prevent looping
+                    if counter == 10:
+                        break
+
+                    counter += 1
                 except Exception as e:
                     logger.error(f"Error parsing, {e}")
         else:
             random_index = random.randint(0, 9)
             result = response.data[random_index]['text']
+
+
+        # default result
+        result = "Hi boss, be tolerant and command what is right: pay no attention to foolish people."
 
         return result
 
