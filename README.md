@@ -11,7 +11,14 @@ This repository is for my personal Twitter assistant bot that can do NLP things.
 - Integrated with Stable Diffusion
 - More automation
 
-## Current version 0.3.1
+
+## Current version 0.3.2
+### Added
+### Changed
+### Fixed
+    - Prevent looping forever in care message.
+
+##  Version 0.3.1
 ### Added
 ### Changed
     - Change weather API to open-meteo
