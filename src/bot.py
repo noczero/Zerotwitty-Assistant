@@ -174,9 +174,11 @@ class ZeroTwittyAssistant():
         response = self.api_v2.get_users_tweets(user.data.id)
         logger.debug(response)
 
+        # default result
+        result = "Hi boss, be tolerant and command what is right: pay no attention to foolish people."
+
         if choose_user == "tssremindbot":
             # using randomize
-            result = ''
             found = False
             counter = 0
             while not found:
@@ -201,10 +203,6 @@ class ZeroTwittyAssistant():
         else:
             random_index = random.randint(0, 9)
             result = response.data[random_index]['text']
-
-
-        # default result
-        result = "Hi boss, be tolerant and command what is right: pay no attention to foolish people."
 
         return result
 
