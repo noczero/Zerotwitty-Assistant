@@ -11,6 +11,11 @@ This repository is for my personal Twitter assistant bot that can do NLP things.
 - Integrated with Stable Diffusion
 - More automation
 
+## Current version 0.3.3
+### Added
+### Changed
+### Fixed
+    - Fix return care message.
 
 ## Current version 0.3.2
 ### Added
