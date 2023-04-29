@@ -1,3 +1,4 @@
+import json
 import os
 import random
 from datetime import datetime
@@ -206,6 +207,12 @@ class ZeroTwittyAssistant():
 
         return result
 
+    def get_care_msg_v2(self):
+        with open('./assets/msg/care-msg.json', 'r') as care_msg_file:
+            care_msgs = json.load(care_msg_file)
+            day = datetime.now().day
+            return care_msgs[day-1]['msg']
+
     def morning_greetings(self):
         # get trends
         success = False
@@ -216,7 +223,7 @@ class ZeroTwittyAssistant():
         while not success:
             trends_str = self.get_top_trend(limit=limit)
             weather_str = Weather(latitude=Settings.CITY_LATITUDE, longitude=Settings.CITY_LONGITUDE).get_weather()
-            care_msg_str = self.get_care_message(max_length=max_length, min_length=min_length)
+            care_msg_str = self.get_care_msg_v2()
 
             # text_format = f"Currently in your location is {weather_str}. \n" \
             #               f"{care_msg_str} " \
