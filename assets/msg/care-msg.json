@@ -1,0 +1,188 @@
+[
+  {
+    "id": 1,
+    "msg": "Take a deep breath and let go of all your worries. You are doing great!",
+    "category": "Relaxation",
+    "media": "Breathe Me by Sia"
+  },
+  {
+    "id": 2,
+    "msg": "Remember to take breaks throughout the day. Your mental health is just as important as your work.",
+    "category": "Work/Life Balance",
+    "media": "Work from Home by Fifth Harmony"
+  },
+  {
+    "id": 3,
+    "msg": "Don't forget to drink water and stay hydrated. Your body will thank you!",
+    "category": "Physical Health",
+    "media": "Water Me by Lizzo"
+  },
+  {
+    "id": 4,
+    "msg": "Take a moment to appreciate yourself and all that you have accomplished. You are amazing!",
+    "category": "Self-Love",
+    "media": "Scars to Your Beautiful by Alessia Cara"
+  },
+  {
+    "id": 5,
+    "msg": "It's okay to say no and set boundaries. Your mental health and well-being come first.",
+    "category": "Boundaries",
+    "media": "No by Meghan Trainor"
+  },
+  {
+    "id": 6,
+    "msg": "Remember to take care of your skin and pamper yourself. You deserve it!",
+    "category": "Self-Care",
+    "media": "Skin by Rihanna"
+  },
+  {
+    "id": 7,
+    "msg": "Take a break from social media and enjoy the present moment. Life is happening right in front of you!",
+    "category": "Digital Detox",
+    "media": "The Middle by Zedd, Maren Morris, Grey"
+  },
+  {
+    "id": 8,
+    "msg": "Surround yourself with positive people who uplift and support you. You deserve to be surrounded by love!",
+    "category": "Relationships",
+    "media": "Love on Top by Beyoncé"
+  },
+  {
+    "id": 9,
+    "msg": "Remember to get enough sleep and rest. Your body needs time to recharge and rejuvenate.",
+    "category": "Sleep",
+    "media": "Sweet Dreams by Beyoncé"
+  },
+  {
+    "id": 10,
+    "msg": "Take a moment to appreciate nature and all its beauty. It's a reminder of how amazing life can be!",
+    "category": "Nature",
+    "media": "Here Comes the Sun by The Beatles"
+  },
+  {
+    "id": 11,
+    "msg": "Take a deep breath and remind yourself that you are capable of handling anything that comes your way. You are strong and resilient. Keep going!",
+    "category": "Motivation",
+    "media": "Stronger by Kelly Clarkson"
+  },
+  {
+    "id": 12,
+    "msg": "Remember to take time for yourself today. Do something that brings you joy and makes you feel good. You deserve it!",
+    "category": "Self-Care",
+    "media": "Happy by Pharrell Williams"
+  },
+  {
+    "id": 13,
+    "msg": "Take a deep breath and remind yourself that you are capable of handling anything that comes your way. You are strong and resilient. Keep going!",
+    "category": "Motivation",
+    "media": "Stronger by Kelly Clarkson"
+  },
+  {
+    "id": 14,
+    "msg": "Remember to take breaks and give yourself time to recharge. Self care is not selfish, it's necessary. Take care of yourself so you can be your best self.",
+    "category": "Self Care",
+    "media": "Good as Hell by Lizzo"
+  },
+  {
+    "id": 15,
+    "msg": "Remember to take breaks and give yourself time to recharge. You deserve to rest and take care of yourself. You are important!",
+    "category": "Self-Care",
+    "media": "Breathe Me by Sia"
+  },
+  {
+    "id": 16,
+    "msg": "Take a break and go for a walk. Breathe in the fresh air and let go of any stress. Remember, you are doing great!",
+    "category": "Self-Care",
+    "media": "Walking on Sunshine by Katrina and the Waves"
+  },
+  {
+    "id": 17,
+    "msg": "Treat yourself to something you love today. Whether it's a favorite food or activity, you deserve to feel happy and fulfilled.",
+    "category": "Self-Love",
+    "media": "Good as Hell by Lizzo"
+  },
+  {
+    "id": 18,
+    "msg": "Take a deep breath and remind yourself that you are capable of handling anything that comes your way. You got this!",
+    "category": "Encouragement",
+    "media": "Stronger by Kelly Clarkson"
+  },
+  {
+    "id": 19,
+    "msg": "Remember to take a break and do something that brings you joy. Whether it's reading a book or dancing to your favorite song, prioritize your happiness.",
+    "category": "Self-Care",
+    "media": "Happy by Pharrell Williams"
+  },
+  {
+    "id": 20,
+    "msg": "Take a break and prioritize self-care today. Remember that you deserve it.",
+    "category": "Self-Love",
+    "media": "Brave by Sara Bareilles"
+  },
+  {
+    "id": 21,
+    "msg": "Don't forget to move your body today. Even a short walk can do wonders for your mind and body.",
+    "category": "Physical Health",
+    "media": "Good as Hell by Lizzo"
+  },
+  {
+    "id": 22,
+    "msg": "Give yourself permission to let go of things that no longer serve you. It's okay to say no and focus on what brings you joy.",
+    "category": "Mental Health",
+    "media": "Don't Stop Believin' by Journey"
+  },
+  {
+    "id": 23,
+    "msg": "Take a break and enjoy some self-care. Light a candle, relax and listen to some calming music.",
+    "category": "Relaxation",
+    "media": "Weightless by Marconi Union"
+  },
+  {
+    "id": 24,
+    "msg": "You are important and worthy of love and care. Take some time to do something you enjoy today.",
+    "category": "Self-Love",
+    "media": "Scars to Your Beautiful by Alessia Cara"
+  },
+  {
+    "id": 25,
+    "msg": "Remember to stay hydrated and nourish your body with healthy foods. Your body will thank you!",
+    "category": "Physical Health",
+    "media": "Water by Beyonce"
+  },
+  {
+    "id": 26,
+    "msg": "Remember to take breaks and recharge your batteries. You deserve time to rest and relax.",
+    "category": "Self-Care",
+    "media": "The Lazy Song by Bruno Mars"
+  },
+  {
+    "id": 27,
+    "msg": "Be kind to yourself. You are doing the best you can, and that's enough.",
+    "category": "Self-Love",
+    "media": "Scars to your beautiful by Alessia Cara"
+  },
+  {
+    "id": 28,
+    "msg": "It's okay to ask for help. You don't have to go through everything alone.",
+    "category": "Mental Health",
+    "media": "Lean on Me by Bill Withers"
+  },
+  {
+    "id": 29,
+    "msg": "Remember to take a break and breathe. It's okay to rest and recharge.",
+    "category": "Mental Health",
+    "media": "Breathe Me - Sia"
+  },
+  {
+    "id": 30,
+    "msg": "Take care of your body by nourishing it with healthy food and exercise. Your body deserves it.",
+    "category": "Physical Health",
+    "media": "Stronger - Kelly Clarkson"
+  },
+  {
+    "id": 31,
+    "msg": "Be kind to yourself and practice self-compassion. You are doing the best you can.",
+    "category": "Self-Love",
+    "media": "Scars to Your Beautiful - Alessia Cara"
+  }
+]
